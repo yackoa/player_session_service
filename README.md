@@ -1,5 +1,5 @@
-# flask_sandbox
-just a repo to test out and learn flask
+# Quick intro to FLask
+Fancy a quick intro to flask? Read on...
 
 **Note** : You would need to know some basic python and a basic idea of what a webservice means
 
