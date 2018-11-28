@@ -3,7 +3,7 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route("/hello")
-def hello():
+def print_hello():
     return "hello world"
 
 if __name__== '__main__':
