@@ -2,7 +2,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route("/hello")
+@app.route("/api/v1/hello")
 def print_hello():
     return "hello world"
 
