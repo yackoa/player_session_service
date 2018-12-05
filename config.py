@@ -2,7 +2,7 @@ import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-class Config(Object):
+class Config(object):
     """
     TODO: add documentation for Config
     TODO: add more config - DEV / TEST / PROD
