@@ -1,6 +1,6 @@
 from flask import Flask,jsonify, request,abort
 from flask_sqlalchemy import SQLAlchemy
-
+from datetime import datetime
 
 
 app = Flask(__name__)
@@ -15,7 +15,7 @@ class Player(db.Model):
         "player_id": "0a2d12a1a7e145de8bae44c0c6e06629",
         "session_id": "4a0c43c9-c43a-42ff-ba55-67563dfa35d4",
         "ts": "2016-12-02T12:48:05.520022"
-        TODO: add date time conversion based on
+        TODO: add date time conversion based on1
     """
     event = db.Column(db.String(5))
     country = db.Column(db.String(2))
@@ -29,7 +29,7 @@ class Player(db.Model):
         self.country = country
         self.player_id = player_id
         self.session_id = session_id
-        self.timestamp = timestamp
+        self.timestamp = datetime.strptime(timestamp, '%Y-%m-%dT%H:%M:%S.%f')
 
 @app.route("/api/v1/hello")
 def print_hello():
@@ -63,8 +63,8 @@ def create_session():
             or not 'player_id' in request.json:
         abort(400)
     print(request.json)
-    player = Player(request.json.event,request.json.country,
-                    request.json.player_id,request.json.session_id,request.json.timestamp)
+    player = Player(request.json['event'],request.json['country'],
+                    request.json['player_id'],request.json['session_id'],request.json['ts'])
     db.session.add(player)
     db.session.commit()
     return jsonify({'Player':player})
