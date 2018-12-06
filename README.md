@@ -17,7 +17,8 @@ considered complete. Service is expected to handle massive amount of sessions.
 -Data older than 1 year should be discarded
 
 ## Events
-Example start event,
+### Example start event
+
 {
 "event": "start",
 "country": "FI",
@@ -25,7 +26,9 @@ Example start event,
 "session_id": "4a0c43c9-c43a-42ff-ba55-67563dfa35d4",
 "ts": "2016-12-02T12:48:05.520022"
 }
-Example end event,
+
+### Example end event
+
 {
 "event": "end",
 "player_id": "0a2d12a1a7e145de8bae44c0c6e06629",
