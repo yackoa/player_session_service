@@ -1,5 +1,5 @@
 
-#Question
+# Question
 Design and implement a player session service using Python and Cassandra. You are free to use any
 external libraries you see fit.
 Player Session Service
@@ -8,7 +8,7 @@ metrics about players sessions. Each user will generate two events, one start ev
 starts and one end event when session is finished. When both events have been received the session is
 considered complete. Service is expected to handle massive amount of sessions.
 
-##Requirements
+## Requirements
 -Use Python and Cassandra
 -All endpoints are REST APIs
 -API for receiving event batches (1-10 events / batch)
@@ -16,7 +16,7 @@ considered complete. Service is expected to handle massive amount of sessions.
 -API for fetching last 20 complete sessions for a given player
 -Data older than 1 year should be discarded
 
-##Events
+## Events
 Example start event,
 {
 "event": "start",
@@ -33,6 +33,6 @@ Example end event,
 "ts": "2016-12-02T12:49:05.520022"
 }
 
-##TODO
+## TODO
 - Once API starts working switch from Sqlite to Cassandra
 - Write a seperate blog post detailing issues about cassandra
